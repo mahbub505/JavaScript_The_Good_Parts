@@ -1,3 +1,19 @@
+//http://javascriptissexy.com/understand-javascript-closures-with-ease/
+function celebrityName (firstName) {
+    var nameIntro = "This celebrity is ";
+    // this inner function has access to the outer function's variables, including the parameter​
+   function lastName (theLastName) {
+        return nameIntro + firstName + " " + theLastName;
+    }
+    return lastName;
+}
+var mjName = celebrityName ("Michael");
+/* At this juncture, the celebrityName outer function has returned.​
+​​// The closure (lastName) is called here after the outer function has returned above​
+​// Yet, the closure still has access to the outer function's variables and parameter​*/
+//mjName ("Jackson"); // This celebrity is Michael Jackson
+document.writeln(mjName ("Jackson"));
+
 var quo = function (status){
     return{
         get_status:function (){
@@ -47,9 +63,61 @@ var add_the_handlers = function (nodes) {
     for (i = 0; i < nodes.length; i += 1) {
         nodes[i].onclick = function (i) {
             return function (e) {
-                alert(e);
-            };
+                
+                return function(y, x){
+                    alert();
+                }
+            }(4, 5);
         }(i);
-    }
+            }
 };
 add_the_handlers(document.body);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var b = 3;
+function a(g){
+    console.log(g, "Main G");
+    return function(g){
+        
+        return function(d){
+            
+        }
+        console.log(g, "MainCHild G");
+        console.log(g, "Child g")
+    }(7);
+}
+
+a(b)(5);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
