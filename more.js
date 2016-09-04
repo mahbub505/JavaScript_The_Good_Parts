@@ -1,0 +1,4 @@
+///Inheritance ->functional
+///Inheritance ->parts
+
+//
